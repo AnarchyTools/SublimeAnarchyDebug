@@ -1,0 +1,3 @@
+[submodule "lldb_bridge"]
+	path = lldb_bridge
+	url = https://github.com/AnarchyTools/lldb-server.git
