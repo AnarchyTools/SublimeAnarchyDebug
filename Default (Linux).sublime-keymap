@@ -1,0 +1,23 @@
+[
+	{
+		"keys": [ "ctrl+alt+r" ],
+		"command": "atdebug",
+		"args": {
+			"start": true
+		}
+	},
+	{
+		"keys": [ "ctrl+alt+b" ],
+		"command": "atlldb",
+		"args": {
+			"toggle_breakpoint": true
+		}
+	},
+	{
+		"keys": [ "ctrl+alt+shift+b" ],
+		"command": "atlldb",
+		"args": {
+			"enable_disable_breakpoint": true
+		}
+	}
+]

@@ -1,0 +1,86 @@
+[
+	{
+		"caption": "AnarchyDebug: Start debugger",
+		"command": "atdebug",
+		"args": {
+			"start": true
+		}
+	},
+	{
+		"caption": "AnarchyDebug: Stop debugger",
+		"command": "atdebug",
+		"args": {
+			"stop": true
+		}
+	},
+	{
+		"caption": "AnarchyDebug: Continue",
+		"command": "atdebug",
+		"args": {
+			"action": "continue"
+		}
+	},
+	{
+		"caption": "AnarchyDebug: Pause",
+		"command": "atdebug",
+		"args": {
+			"action": "pause"
+		}
+	},
+	{
+		"caption": "AnarchyDebug: Step into",
+		"command": "atdebug",
+		"args": {
+			"action": "step_into"
+		}
+	},
+	{
+		"caption": "AnarchyDebug: Step over",
+		"command": "atdebug",
+		"args": {
+			"action": "step_over"
+		}
+	},
+	{
+		"caption": "AnarchyDebug: Step out",
+		"command": "atdebug",
+		"args": {
+			"action": "step_out"
+		}
+	},
+	{
+		"caption": "AnarchyDebug: Kill target",
+		"command": "atdebug",
+		"args": {
+			"action": "stop"
+		}
+	},
+	{
+		"caption": "AnarchyDebug: Toggle Breakpoint",
+		"command": "atlldb",
+		"args": {
+			"toggle_breakpoint": true
+		}
+	},
+	{
+		"caption": "AnarchyDebug: Enable/Disable Breakpoint",
+		"command": "atlldb",
+		"args": {
+			"enable_disable_breakpoint": true
+		}
+	},
+	{
+		"caption": "AnarchyDebug: Show LLDB console",
+		"command": "atdebug_console",
+		"args": {
+			"show": true
+		}
+	},
+	{
+		"caption": "AnarchyDebug: Hide LLDB console",
+		"command": "atdebug_console",
+		"args": {
+			"show": false
+		}
+	}
+]

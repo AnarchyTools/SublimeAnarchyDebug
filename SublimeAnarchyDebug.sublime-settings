@@ -1,0 +1,7 @@
+{
+	// Path to the LLDB.framework python resources
+	"lldb_python_path": "/Library/Developer/Toolchains/swift-latest.xctoolchain/System/Library/PrivateFrameworks/LLDB.framework/Resources/Python",
+
+	// Automatically show lldb console when debugger starts?
+	"auto_show_lldb_console": true
+}

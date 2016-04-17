@@ -1,0 +1,31 @@
+%YAML 1.2
+---
+name: AnarchyTools LLDB Console
+scope: lldb.console
+hidden: true
+
+contexts:
+  main:
+    - match: (STDOUT:)\s+(.*)
+      captures:
+        1: comment
+        2: string
+    - match: (STDERR:)\s+(.*)
+      captures:
+        1: comment
+        2: keyword
+
+    - match: (LLDB OK:)\s+(.*)
+      captures:
+        1: comment
+        2: support.function
+
+    - match: (LLDB ERR:)\s+(.*)
+      captures:
+        1: comment
+        2: variable.parameter
+
+    - match: (\(lldb\))\s+(.*)
+      captures:
+        1: keyword
+        2: entity.name.function

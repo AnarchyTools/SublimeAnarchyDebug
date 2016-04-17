@@ -1,0 +1,99 @@
+%YAML 1.2
+---
+name: AnarchyTools LLDB Stack
+scope: lldb.stack
+hidden: true
+
+contexts:
+  main:
+    - match: '\* Thread'
+      scope: string
+      push: thread
+
+    - match: '\* Local variables'
+      scope: support.class
+      push: locals
+
+    - match: '\[ continue \]'
+      scope: keyword button btn_continue
+
+    - match: '\[ pause \]'
+      scope: keyword button btn_pause
+
+    - match: '\[ step into \]'
+      scope: keyword button btn_step_into
+
+    - match: '\[ step over \]'
+      scope: keyword button btn_step_over
+
+    - match: '\[ step out \]'
+      scope: keyword button btn_step_out
+
+    - match: '\[ stop \]'
+      scope: keyword button btn_stop
+
+  thread:
+    - meta_scope: thread
+    - match: '([0-9]*)\s+\((.*), queue: (.*), id: ([0-9]+)\)'
+      scope: string
+
+    - match: ([0-9]+)\s+([a-zA-Z0-9._-]+)\s+([^:]+):([0-9]+)((:)([0-9]+))?\s\((.*)\)
+      captures:
+        1: constant.numeric
+        2: entity.name.class
+        3: entity.name.function
+        4: constant.numeric
+        5: default
+        6: default
+        7: constant.numeric
+        8: entity.name.function
+
+    - match: ([0-9]+)\s+([a-zA-Z0-9._-]+)\s+(.+)\s+(\+\s+[0-9]+)
+      captures:
+        1: constant.numeric
+        2: support.class
+        3: comment
+        4: comment
+
+    - match: '^(Status): (.*)'
+      captures:
+        1: keyword
+        2: constant.other
+
+    - match: '^$'
+      pop: true
+
+  locals:
+    - meta_scope: locals
+
+    - match: '(for frame )(#[0-9]+)'
+      captures:
+        1: support.class
+        2: constant.numeric
+
+    - match: (.*)( -> )
+      captures:
+        1: entity.name.variable
+        2: comment
+      push: value
+
+    - match: '^$'
+      pop: true
+
+  value:
+    - match: "None"
+      scope: keyword
+
+    - match: '"'
+      scope: string
+      push: string
+
+    - match: '$'
+      pop: true
+
+  string:
+    - meta_scope: string
+    - match: \\.
+      scope: constant.character.escape
+    - match: '"'
+      pop: true
